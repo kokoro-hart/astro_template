@@ -5,6 +5,7 @@ import image from '@astrojs/image';
 import compress from 'astro-compress';
 import yaml from '@rollup/plugin-yaml';
 import postcssPresetEnv from 'postcss-preset-env';
+import sitemap from '@astrojs/sitemap';
 
 import { createRequire } from 'module';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -21,6 +22,7 @@ export const CONSTANTS = {
  * @docs https://astro.build/config
  */
 export default defineConfig({
+  site: 'https://stargazers.club/',
   integrations: [
     image(),
     compress({
@@ -31,6 +33,7 @@ export default defineConfig({
       js: false,
       svg: false,
     }),
+    sitemap()
   ],
   vite: {
     css: {

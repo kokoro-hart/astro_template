@@ -25,14 +25,12 @@
       "prettier --write",
       "stylelint --fix"
     ],
-    "*.astro": [
-      "markuplint --config .markuplintrc.cjs"
-    ],
     "*.{astro,js,ts,json}": [
       "prettier --write"
     ]
   },
   "dependencies": {
+    "@astrojs/sitemap": "^1.2.2",
     "astro": "^2.0.11"
   },
   "devDependencies": {
