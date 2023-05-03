@@ -1,29 +1,35 @@
 ---
+import { getPaths } from "@/utils/getPaths"
+
+import { Image } from "@astrojs/image/components"
+
 import Hamburger from "@/components/Elements/Hamburger/Hamburger.astro"
 import GlovalNav from "@/components/Elements/GlovalNav/GlovalNav.astro"
 
 import style from "./Header.module.scss"
 
+const { root, about, works, faq, contact } = getPaths()
+
 const nav = [
   {
     name: "TOP",
-    path: "/",
+    path: root,
   },
   {
     name: "ABOUT",
-    path: "/about/",
+    path: about,
   },
   {
     name: "WORKS",
-    path: "/works/",
+    path: works,
   },
   {
     name: "FAQ",
-    path: "/faq/",
+    path: faq,
   },
   {
     name: "CONTACT",
-    path: "/contact/",
+    path: contact,
   },
 ]
 ---
@@ -32,12 +38,11 @@ const nav = [
   <div class={style.header__inner}>
     <div class={style.header__logo} title="トップページへ戻る">
       <a href="/" class={style.header__logoLink}>
-        <img
-          src="/img/common/logo.svg"
+        <Image
+          src={import("@/assets/img/common/logo.svg")}
           alt="株式会社FLAT"
-          width="62"
-          height="43"
-          decoding="async"
+          width={62}
+          height={43}
           class={style.header__logoImage}
         />
       </a>

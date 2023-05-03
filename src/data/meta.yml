@@ -7,3 +7,10 @@ meta:
   "og:title": "Base title"
   "og:description": "Base description"
   "og:image": ""
+
+paths:
+  root: "/"
+  about: "/about/"
+  works: "/works/"
+  faq: "/faq/"
+  contact: "/contact/"
