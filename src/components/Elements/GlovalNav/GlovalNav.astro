@@ -1,0 +1,13 @@
+---
+import style from "./GlovalNav.module.scss"
+
+const { nav } = Astro.props
+---
+
+<nav class={style.globalNav} aria-label="global navigation">
+  <ul class={style.globalNav__list}>
+    <li class={style.globalNav__item}>
+      <a href="" class={style.globalNav__link}>MENU</a>
+    </li>
+  </ul>
+</nav>

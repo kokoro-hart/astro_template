@@ -1,4 +1,6 @@
 ---
+import Header from "@/components/Elements/Header/Header.astro"
+
 import DocumentLayout, { Props as DocumentProps } from "../layouts/Document.astro"
 export interface Props extends DocumentProps {}
 
@@ -6,6 +8,7 @@ const props = Astro.props
 ---
 
 <DocumentLayout {...props}>
+  <Header />
   <main>
     <slot />
   </main>

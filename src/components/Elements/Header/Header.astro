@@ -1,0 +1,50 @@
+---
+import Hamburger from "@/components/Elements/Hamburger/Hamburger.astro"
+import GlovalNav from "@/components/Elements/GlovalNav/GlovalNav.astro"
+
+import style from "./Header.module.scss"
+
+const nav = [
+  {
+    name: "TOP",
+    path: "/",
+  },
+  {
+    name: "ABOUT",
+    path: "/about/",
+  },
+  {
+    name: "WORKS",
+    path: "/works/",
+  },
+  {
+    name: "FAQ",
+    path: "/faq/",
+  },
+  {
+    name: "CONTACT",
+    path: "/contact/",
+  },
+]
+---
+
+<header class={style.header}>
+  <div class={style.header__inner}>
+    <div class={style.header__logo} title="トップページへ戻る">
+      <a href="/" class={style.header__logoLink}>
+        <img
+          src="/img/common/logo.svg"
+          alt="株式会社FLAT"
+          width="62"
+          height="43"
+          decoding="async"
+          class={style.header__logoImage}
+        />
+      </a>
+    </div>
+    <div class={style.header__nav}>
+      <GlovalNav />
+    </div>
+    <Hamburger />
+  </div>
+</header>
