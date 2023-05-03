@@ -7,7 +7,7 @@ module.exports = {
     es2022: true,
   },
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  plugins: ['@typescript-eslint/eslint-plugin'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'import', 'unused-imports'],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     '@typescript-eslint/ban-ts-comment': 'warn',
@@ -17,6 +17,16 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
+        'newlines-between': 'always',
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
+    'import/prefer-default-export': 'off',
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     Astro: 'readonly',
