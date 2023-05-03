@@ -1,7 +1,7 @@
 @charset "utf-8";
-@use "sass:math";
-@use "breakpoint";
-@use "variables";
+@use 'sass:math';
+@use 'breakpoint';
+@use 'variables';
 
 // コンテンツ幅
 // $width: wide || narrow
@@ -29,6 +29,9 @@
   }
 }
 
+@mixin testModule() {
+}
+
 // object-fit
 // $fit: object-fit値、$position: object-position値
 @mixin object_fit($fit: cover, $position: null) {
@@ -36,9 +39,9 @@
 
   @if $position {
     object-position: $position;
-    font-family: "object-fit: #{$fit}; object-position: #{$position}";
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
   } @else {
-    font-family: "object-fit: #{$fit};";
+    font-family: 'object-fit: #{$fit};';
   }
 }
 
@@ -59,7 +62,7 @@
 // 行数制御
 // 引数の数値以下の行数は表示し、それ以上の行数は「...」で省略する
 @mixin line-clamp($count: 3) {
-  @if type-of($count) != "number" {
+  @if type-of($count) != 'number' {
     @error 'line-clampの引数は必ず数値で指定してください';
   }
 
@@ -87,7 +90,7 @@
   &::after {
     display: block;
     clear: both;
-    content: "";
+    content: '';
   }
 }
 
@@ -109,8 +112,7 @@
 
 // iOS Safari
 @mixin only_iOS {
-  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and
-    (not (-moz-appearance: none)) {
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and (not (-moz-appearance: none)) {
     @content;
   }
 }
