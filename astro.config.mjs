@@ -22,7 +22,7 @@ export const CONSTANTS = {
  * @docs https://astro.build/config
  */
 export default defineConfig({
-  site: 'https://stargazers.club/',
+  site: 'https://wd-flat.com/',
   integrations: [
     image(),
     compress({
