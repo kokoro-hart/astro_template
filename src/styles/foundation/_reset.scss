@@ -1,5 +1,5 @@
 @charset "utf-8";
-@use '../global';
+@use "../global";
 
 * {
   box-sizing: border-box;
@@ -176,13 +176,13 @@ q::before {
 
 /* form */
 
-input[type='text'],
-input[type='tel'],
-input[type='number'],
-input[type='date'],
-input[type='time'],
-input[type='password'],
-input[type='email'],
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="password"],
+input[type="email"],
 textarea {
   appearance: none;
   -webkit-tap-highlight-color: rgba(0 0 0 / 0%);
