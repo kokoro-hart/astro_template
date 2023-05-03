@@ -1,20 +1,20 @@
 ---
-import '@/styles/style.scss';
-import config from '@/data/meta.yml'
+import "@/styles/style.scss"
+import config from "@/data/meta.yml"
 
 export interface Meta {
   title: string
   description: string
-  'og:title': string
-  'og:description': string
-  'og:image': string
+  "og:title": string
+  "og:description": string
+  "og:image": string
 }
 
 export interface Props {
   meta?: Partial<Meta>
 }
 
-const props = Astro.props;
+const props = Astro.props
 
 const meta: Readonly<Meta> = {
   ...config.meta,
@@ -22,43 +22,104 @@ const meta: Readonly<Meta> = {
 }
 
 const formats = {
-  title: [meta.title, config.siteName].filter(Boolean).join(' - ')
+  title: [meta.title, config.siteName].filter(Boolean).join(" - "),
 }
 const origin = import.meta.env.PUBLIC_ORIGIN || Astro.url.origin
 const url = `${origin}${Astro.url.pathname}`
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://example.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Category",
+      item: "https://example.com/category/",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Current Page",
+      item: "https://example.com/category/page/",
+    },
+  ],
+})
 ---
 
 <!DOCTYPE html>
 <html lang={config.lang}>
-	<head>
-		<meta charset="UTF-8" />
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{formats.title}</title>
-    <link rel="dns-prefetch" href="https://use.typekit.net">
-    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-    <meta name="description" content={meta.description}>
-    <meta property="og:url" content={url} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={formats.title} />
-    {meta['og:image'] && (<meta property="og:image" content={origin + meta['og:image']} />)}
-    <meta property="og:description" content={meta.description} />
-    <script>
-      import '@/js/app'
-    </script>
-    {/* Google tag (gtag.js) */}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRVDPYGRBV"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{formats.title}</title>
+    <link rel="dns-prefetch" href="https://use.typekit.net" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
 
-      gtag('config', 'G-LRVDPYGRBV');
+    {/* *** common *** ★忘れずに指定 */}
+    <meta name="og:url" property="og:url" content={url} />
+    <meta name="og:title" property="og:title" content={formats.title} />
+    <meta name="og:description" property="og:description" content={meta.description} />
+    <meta property="og:type" content="website" />
+    <meta name="og:site_name" property="og:site_name" content={formats.title} />
+    {meta["og:image"] && <meta name="og:image" property="og:image" content={origin + meta["og:image"]} />}
+    <link rel="canonical" href={url} />
+
+    {/* *** Twitter *** ★忘れずに指定 */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dummy" />
+    <meta name="twitter:description" content={meta.description} />
+
+    {/* *** favicon *** ★忘れずに指定  */}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" /><!-- 32×32 -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" /><!-- 180×180 -->
+
+    {/* Font  */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <script>
+      import "@/js/app"
     </script>
-	</head>
-	<body>
-		<slot />
-	</body>
+
+    {/* Google tag  */}
+
+    {/* jsonld  */}
+    <script type="application/ld+json" set:html={schema}></script>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
