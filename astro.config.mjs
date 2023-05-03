@@ -42,8 +42,6 @@ export default defineConfig({
         scss: {
           charset: false,
           importer: globImporter(),
-          // Global addition styles
-          //additionalData: [`@use "sass:math";`, `@import '@/styles/foundations/custom-media.scss';`].join('\n'),
         },
       },
       postcss: {

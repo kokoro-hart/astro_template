@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "license": "MIT",
   "private": true,
-  "author": "uuki <uuki.dev@gmail.com>",
+  "author": "kokoro tobita <cocosyu.11261126@gmail.com>",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
