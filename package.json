@@ -26,8 +26,7 @@
     ],
     "*.{astro,js,ts,json}": [
       "prettier --write"
-    ],
-    "**/*.ts?(x)": "npm run build-types"
+    ]
   },
   "dependencies": {
     "astro": "^2.0.11"
