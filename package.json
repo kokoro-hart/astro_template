@@ -24,7 +24,9 @@
       "prettier --write",
       "stylelint --fix"
     ],
-    "*.{astro,js,ts,json}": ["prettier --write"],
+    "*.{astro,js,ts,json}": [
+      "prettier --write"
+    ],
     "**/*.ts?(x)": "npm run build-types"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
     "@astrojs/image": "^0.15.0",
     "@rollup/plugin-yaml": "^4.0.1",
     "@types/node": "^18.11.18",
+    "@types/postcss-preset-env": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "astro-compress": "^1.1.25",
@@ -43,6 +46,7 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
+    "postcss": "^8.4.20",
     "postcss-preset-env": "^7.8.3",
     "prettier": "^2.8.1",
     "prettier-plugin-astro": "^0.7.2",

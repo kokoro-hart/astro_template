@@ -26,7 +26,6 @@ body {
 body {
   color: global.$color_black;
   overflow-wrap: break-word;
-  background-color: red;
 
   @include global.fz(16);
   @include global.font_serif;

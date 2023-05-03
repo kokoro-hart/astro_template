@@ -46,5 +46,5 @@ module.exports = {
       rules: {},
     },
   ],
-  ignorePatterns: ['astro.config.mjs', '.eslintrc.cjs'],
+  ignorePatterns: ['astro.config.mjs', '.eslintrc.cjs', '.stylelintrc.cjs'],
 };

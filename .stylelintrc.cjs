@@ -10,14 +10,4 @@ module.exports = {
     'scss/double-slash-comment-whitespace-inside': null,
   },
   ignoreFiles: ['dist/**', 'node_modules/**'],
-  overrides: [
-    {
-      files: ['**/*.scss'],
-      customSyntax: 'postcss-scss',
-    },
-    {
-      files: ['**/*.astro'],
-      customSyntax: 'postcss-html',
-    },
-  ],
 };
