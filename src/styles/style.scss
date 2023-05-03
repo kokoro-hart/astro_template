@@ -1,28 +1,5 @@
 @use "foundation";
 
-@use "component/button";
-@use "component/grid";
-@use "component/hamburger";
-@use "component/heading";
-@use "component/mainVisual";
-@use "component/form";
-
-@use "layout/breadcrumb";
-@use "layout/columns";
-@use "layout/container";
-@use "layout/contents";
-@use "layout/footer";
-@use "layout/globalNav";
-@use "layout/header";
-@use "layout/linkSkip";
-@use "layout/main";
-@use "layout/pagetop";
-@use "layout/section";
-@use "layout/sectionTop";
-@use "layout/sub";
-
-@use "project/entry";
-
 @use "utility/br";
 @use "utility/hide";
 @use "utility/margin";
