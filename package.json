@@ -11,7 +11,21 @@
     "preview": "astro preview",
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
     "lint:style": "stylelint 'src/**/*.scss'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "check-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "validate": "npm run check-types && lint-staged --no-stash"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix --cache"
+    ],
+    "**/*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{astro,js,ts,json}": ["prettier --write"],
+    "**/*.ts?(x)": "npm run build-types"
   },
   "dependencies": {
     "@astrojs/svelte": "^2.0.2",
