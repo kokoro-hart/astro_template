@@ -34,11 +34,6 @@ export default defineConfig({
   ],
   vite: {
     css: {
-      preprocessorOptions: {
-        scss: {
-          charset: false,
-        },
-      },
       postcss: {
         plugins: [
           postcssPresetEnv({

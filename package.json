@@ -26,7 +26,7 @@
       "stylelint --fix"
     ],
     "*.astro": [
-      "markuplint --config .markuplintrc"
+      "markuplint --config .markuplintrc.cjs"
     ],
     "*.{astro,js,ts,json}": [
       "prettier --write"
