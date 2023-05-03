@@ -2,8 +2,8 @@ lang: "ja"
 siteName: "Astro basic template"
 
 meta:
-  title: "As"
-  description: "🚀 Astro basic template provides a basic structure and config for website development."
-  "og:title": ""
-  "og:description": ""
+  title: "Base title"
+  description: "Base description"
+  "og:title": "Base title"
+  "og:description": "Base description"
   "og:image": ""

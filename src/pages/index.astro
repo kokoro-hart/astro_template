@@ -1,15 +1,15 @@
 ---
-import AppLayout from '@/layouts/App.astro';
-import style from './index.module.scss';
+import AppLayout from "@/components/layouts/App.astro"
+import style from "./index.module.scss"
 
 const meta = {
-  title: 'TOP',
-};
+  title: "TOP",
+}
 
 const pages = [
-  { href: '/webfonts-performance/inline-script/', text: 'webfonts-performance (inline-script)' },
-  { href: '/webfonts-performance/optimize/', text: 'webfonts-performance (optimize)' },
-];
+  { href: "/webfonts-performance/inline-script/", text: "webfonts-performance (inline-script)" },
+  { href: "/webfonts-performance/optimize/", text: "webfonts-performance (optimize)" },
+]
 ---
 
 <AppLayout {meta}>
