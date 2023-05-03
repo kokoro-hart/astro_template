@@ -1,0 +1,49 @@
+@charset "utf-8";
+@use "../global";
+
+.l-footer {
+  position: sticky;
+  top: 100vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include global.md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .l-footer__inner {
+    @include global.content_width(wide);
+  }
+
+  .l-footer__nav {
+    // style
+  }
+
+  .l-footer__navList {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .l-footer__navLink {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+
+    @include global.hover {
+      text-decoration: underline;
+    }
+  }
+
+  .l-footer__copy {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @include global.line_height(20, 14);
+    @include global.fz(14);
+  }
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use "../global";
+
+.l-contents {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: global.$color_lightgray;
+
+  @include global.md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  // コンテンツ幅バリエーション
+  .l-contents__wide {
+    @include global.content_width(wide);
+  }
+
+  .l-contents__narrow {
+    @include global.content_width(narrow);
+  }
+
+  .l-contents__section {
+    & + .l-contents__section {
+      margin-top: 40px;
+    }
+  }
+}

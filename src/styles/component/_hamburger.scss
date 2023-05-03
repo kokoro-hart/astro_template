@@ -1,0 +1,40 @@
+@charset "utf-8";
+@use "../global";
+
+.c-hamburger {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+
+  .c-hamburger__line {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: global.$color_black;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 2px;
+      content: "";
+      background-color: global.$color_black;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      bottom: -8px;
+    }
+  }
+
+  @include global.md {
+    display: none;
+  }
+}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+@use "../global";
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: global.$header_height_sp;
+  background-color: global.$color_white;
+
+  @include global.md {
+    height: global.$header_height;
+  }
+
+  .l-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include global.content_width(wide);
+  }
+
+  .l-header__logo {
+    // style
+  }
+
+  .l-header__logoLink {
+    display: block;
+
+    @include global.hover_opacity;
+  }
+
+  .l-header__logoImage {
+    display: block;
+    width: 62px;
+    height: 43px;
+
+    @include global.object_fit(contain);
+  }
+
+  .l-header__nav {
+    @include global.under_md {
+      position: fixed;
+      top: global.$header_height_sp;
+      left: 0;
+      width: 100%;
+      height: calc(100% - #{global.$header_height_sp});
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@charset "utf-8";
+@use "../global";
+
+[class*="c-heading"] {
+  &._center {
+    text-align: center;
+  }
+
+  &._right {
+    text-align: right;
+  }
+
+  &._left {
+    text-align: left;
+  }
+}
+
+.c-heading01 {
+  @include global.line_height(40, 32);
+  @include global.fz(32);
+
+  @include global.md {
+    @include global.line_height(56, 40);
+    @include global.fz(40);
+  }
+}
+
+.c-heading02 {
+  @include global.line_height(36, 28);
+  @include global.fz(28);
+
+  @include global.md {
+    @include global.line_height(40, 32);
+    @include global.fz(32);
+  }
+}
+
+//.c-heading03 {
+//}
+
+//.c-heading04 {
+//}
+
+//.c-heading05 {
+//}

@@ -1,0 +1,48 @@
+@charset "utf-8";
+@use "../global";
+
+.l-sub {
+  background: global.$color_lightgray;
+
+  .l-sub__inner {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .l-sub__heading {
+    @include global.font_weight_bold;
+    @include global.line_height(24, 18);
+    @include global.fz(18);
+  }
+
+  .l-sub__section {
+    & + .l-sub__section {
+      margin-top: 30px;
+    }
+  }
+
+  .l-sub__sectionBody {
+    margin-top: 20px;
+  }
+
+  .l-sub__nav {
+    margin-top: 20px;
+  }
+
+  .l-sub__navList {
+    // style
+  }
+
+  .l-sub__navItem {
+    & + .l-sub__navItem {
+      margin-top: 10px;
+    }
+  }
+
+  .l-sub__navLink {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,16 @@
+@charset "utf-8";
+@use "../global";
+
+.c-grid {
+  display: grid;
+
+  &._grid02 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+  }
+
+  &._grid03 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+  }
+}
