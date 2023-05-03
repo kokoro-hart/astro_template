@@ -4,10 +4,7 @@ import { defineConfig } from 'astro/config';
 import image from '@astrojs/image';
 import compress from 'astro-compress';
 import yaml from '@rollup/plugin-yaml';
-import globImporter from 'node-sass-glob-importer';
-import postcssCustomMedia from 'postcss-custom-media';
 import postcssPresetEnv from 'postcss-preset-env';
-import svelte from '@astrojs/svelte';
 
 import { createRequire } from 'module';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -25,7 +22,6 @@ export const CONSTANTS = {
  */
 export default defineConfig({
   integrations: [
-    svelte(),
     image(),
     compress({
       path: ['./dist'],
@@ -41,12 +37,10 @@ export default defineConfig({
       preprocessorOptions: {
         scss: {
           charset: false,
-          importer: globImporter(),
         },
       },
       postcss: {
         plugins: [
-          postcssCustomMedia(),
           postcssPresetEnv({
             autoprefixer: {
               flexbox: false,

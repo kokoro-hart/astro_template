@@ -1,7 +1,7 @@
 /** @type {import("stylelint").Config} */
 
 module.exports = {
-  extends: ['stylelint-config-html/astro', 'stylelint-config-html/svelte'],
+  extends: ['stylelint-config-html/astro'],
   plugins: ['stylelint-scss'],
   rules: {
     'selector-class-pattern': null,

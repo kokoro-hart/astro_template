@@ -7,7 +7,7 @@ module.exports = {
     es2022: true,
   },
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  plugins: ['@typescript-eslint/eslint-plugin', 'svelte3'],
+  plugins: ['@typescript-eslint/eslint-plugin'],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     '@typescript-eslint/ban-ts-comment': 'warn',
@@ -43,12 +43,6 @@ module.exports = {
     // for TypeScript files
     {
       files: ['**/*.ts'],
-      rules: {},
-    },
-    {
-      // for Svelte files
-      files: ['**/*.svelte'],
-      processor: 'svelte3/svelte3',
       rules: {},
     },
   ],
