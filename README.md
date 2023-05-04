@@ -8,6 +8,7 @@
   - @astrojs/sitemap
   - astro-compress
 - CSS (Sass + PostCSS Plugins)
+  - cssModules
   - glob @use
   - autoprefixer
 - TypeScript
