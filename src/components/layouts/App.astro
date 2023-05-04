@@ -1,10 +1,11 @@
 ---
-import LinkSkip from "@/components/Elements/LinkSkip/LinkSkip.astro"
-import Header from "@/components/Elements/Header/Header.astro"
-import Footer from "@/components/Elements/Footer/Footer.astro"
-
 import DocumentLayout, { Props as DocumentProps } from "../layouts/Document.astro"
-export interface Props extends DocumentProps {}
+
+import Footer from "@/components/Elements/Footer/Footer.astro"
+import Header from "@/components/Elements/Header/Header.astro"
+import LinkSkip from "@/components/Elements/LinkSkip/LinkSkip.astro"
+
+export type Props = DocumentProps
 
 const props = Astro.props
 ---

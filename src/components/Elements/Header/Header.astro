@@ -1,15 +1,13 @@
 ---
-import { getPaths } from "@/utils/getPaths"
-
 import { Image } from "@astrojs/image/components"
 
-import GlovalNav from "./GlovalNav/GlovalNav.astro"
 import DrawerNav from "./DrawerNav/DrawerNav.astro"
+import GlovalNav from "./GlovalNav/GlovalNav.astro"
 import Hamburger from "./Hamburger/Hamburger.astro"
-
+import style from "./Header.module.scss"
 import type { Nav } from "./types/"
 
-import style from "./Header.module.scss"
+import { getPaths } from "@/utils/getPaths"
 
 const { root, about, works, faq, contact } = getPaths()
 
