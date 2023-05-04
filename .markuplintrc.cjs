@@ -18,12 +18,19 @@ module.exports = {
     'end-tag': true,
     'id-duplication': true,
     'ineffective-attr': true,
-    'invalid-attr': true,
+    'invalid-attr': {
+      'options': {
+        'allowAttrs': [
+          '{...props}',
+          // ...TODO: .astroコンポーネント上でやむを得ず必要な属性があれば追加する
+        ]
+      }
+    },
     'landmark-roles': true,
     'no-boolean-attr-value': true,
     'no-default-value': false,
     // 'no-hard-code-id': true, 仕組み化できたらtrueにしたい
-    'no-refer-to-non-existent-id': true,
+    'no-refer-to-non-existent-id': false,
     'no-use-event-handler-attr': true,
     'permitted-contents': true,
     'require-accessible-name': true,

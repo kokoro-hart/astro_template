@@ -18,6 +18,9 @@
     "validate": "npm run check-types && lint-staged --no-stash"
   },
   "lint-staged": {
+    "*.astro": [
+      "markuplint --config .markuplintrc.cjs"
+    ],
     "*.{js,ts}": [
       "prettier --write",
       "eslint --fix --cache"
