@@ -21,7 +21,7 @@ You need to run "nvm install 18.13.0" to install it before using it.
 
 ## 🧞 コマンド
 
-| to do    &nbsp;&nbsp;&nbsp;&nbsp;option&nbsp;&nbsp;&nbsp;&nbsp;            | Command                | Action                                             |
+| to do    &nbsp;&nbsp;&nbsp;&nbsp;option&nbsp;&nbsp;&nbsp;&nbsp;            | Command     &nbsp;&nbsp;&nbsp;&nbsp;option&nbsp;&nbsp;&nbsp;&nbsp;           | Action                                             |
 | :--------------------- | :--------------------- | :------------------------------------------------- |
 | インストール         | `npm ci`         | package-lock.json から依存関係をインストールする                             |
 | 開発         | `npm run dev`             | ローカルサーバー`localhost:3000`で起動する     |
