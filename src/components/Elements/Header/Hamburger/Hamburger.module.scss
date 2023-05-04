@@ -1,13 +1,13 @@
 @charset "utf-8";
 @use "@/styles/global" as *;
 
-.c-hamburger {
+.hamburger {
   display: grid;
   place-items: center;
   width: 60px;
   height: 60px;
 
-  .c-hamburger__line {
+  .hamburger__line {
     position: relative;
     display: block;
     width: 20px;

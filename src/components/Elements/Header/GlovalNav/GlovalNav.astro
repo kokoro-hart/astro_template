@@ -1,0 +1,21 @@
+---
+import type { Nav } from "../types/"
+import style from "./GlovalNav.module.scss"
+
+type Props = { nav: Array<Nav> }
+const { nav } = Astro.props
+---
+
+<nav class={style.globalNav} aria-label="global navigation">
+  <ul class={style.globalNav__list}>
+    {
+      nav.map(({ name, path }) => (
+        <li class={style.globalNav__item}>
+          <a href={path} class={style.globalNav__link}>
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

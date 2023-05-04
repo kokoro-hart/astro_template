@@ -3,14 +3,17 @@ import { getPaths } from "@/utils/getPaths"
 
 import { Image } from "@astrojs/image/components"
 
-import Hamburger from "@/components/Elements/Hamburger/Hamburger.astro"
-import GlovalNav from "@/components/Elements/GlovalNav/GlovalNav.astro"
+import GlovalNav from "./GlovalNav/GlovalNav.astro"
+import DrawerNav from "./DrawerNav/DrawerNav.astro"
+import Hamburger from "./Hamburger/Hamburger.astro"
+
+import type { Nav } from "./types/"
 
 import style from "./Header.module.scss"
 
 const { root, about, works, faq, contact } = getPaths()
 
-const nav = [
+const nav: Array<Nav> = [
   {
     name: "TOP",
     path: root,
@@ -47,9 +50,14 @@ const nav = [
         />
       </a>
     </div>
-    <div class={style.header__nav}>
-      <GlovalNav />
+    <div class={style.header__globalNav}>
+      <GlovalNav nav={nav} />
     </div>
+  </div>
+  <div class={style.header__drawerNav}>
+    <DrawerNav nav={nav} />
+  </div>
+  <div class={style.header__hamburger}>
     <Hamburger />
   </div>
 </header>

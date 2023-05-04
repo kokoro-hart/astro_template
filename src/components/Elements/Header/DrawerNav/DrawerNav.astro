@@ -1,0 +1,21 @@
+---
+import type { Nav } from "../types/"
+import style from "./DrawerNav.module.scss"
+
+type Props = { nav: Array<Nav> }
+const { nav } = Astro.props
+---
+
+<nav id="js-hamburger-menu" class={style.drawerNav} aria-label="global navigation" aria-hidden="true">
+  <ul class={style.drawerNav__list}>
+    {
+      nav.map(({ name, path }) => (
+        <li class={style.drawerNav__item}>
+          <a href={path} class={style.drawerNav__link}>
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
