@@ -3,7 +3,5 @@
     "*.css": "postcss"
   },
   "yaml.schemaStore.enable": false,
-  "css.customData": [
-    "./.vscode/css.json"
-  ],
+  "css.customData": ["./.vscode/css.json"]
 }

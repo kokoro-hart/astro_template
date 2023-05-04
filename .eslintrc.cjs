@@ -6,7 +6,7 @@ module.exports = {
     browser: true,
     es2022: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:astro/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   plugins: ['@typescript-eslint/eslint-plugin', 'import', 'unused-imports'],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
@@ -56,5 +56,5 @@ module.exports = {
       rules: {},
     },
   ],
-  ignorePatterns: ['astro.config.mjs', '.eslintrc.cjs', '.stylelintrc.cjs', '.markuplintrc.cjs'],
+  ignorePatterns: ['astro.config.mjs', '.eslintrc.cjs', '.stylelintrc.cjs', '.markuplintrc.js'],
 };
