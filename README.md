@@ -21,7 +21,7 @@ N/A: version "18.13.0 -> N/A" is not yet installed.
 You need to run "nvm install 18.13.0" to install it before using it.
 ```
 
-## 🧞 コマンド
+## コマンド
 
 | to do            | Command              | Action                                             |
 | :--------------------- | :--------------------- | :------------------------------------------------- |
