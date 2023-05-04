@@ -21,16 +21,13 @@
     "*.astro": [
       "markuplint --config .markuplintrc.js"
     ],
-    "*.{js,ts}": [
+        "*.{astro,js,ts}": [
       "prettier --write",
       "eslint --fix --cache"
     ],
     "**/*.scss": [
       "prettier --write",
       "stylelint --fix"
-    ],
-    "*.{astro,js,ts,json}": [
-      "prettier --write"
     ]
   },
   "dependencies": {
