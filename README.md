@@ -27,3 +27,4 @@ You need to run "nvm install 18.13.0" to install it before using it.
 | 開発         | `npm run dev`             | ローカルサーバー`localhost:3000`で起動する     |
 | ビルド         | `npm run build`           | `./dist/`直下にビルドファイルを生成する            |
 | プレビュー         | `npm run preview`         | ローカルでビルド環境のプレビューを行う       |
+| クリーン         | `npm run clean`         | `astro.config.mjs`ファイルの変更が正しく反映されない場合、キャッシュをクリアすることで解決することがあります。       |
