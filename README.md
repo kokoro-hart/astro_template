@@ -2,6 +2,22 @@
 
 ![astro](astro.svg)
 
+- Astro@2.0.11
+- integrations
+  - @astrojs/image
+  - @astrojs/sitemap
+  - astro-compress
+- CSS (Sass + PostCSS Plugins)
+  - glob @use
+  - autoprefixer
+- TypeScript
+- markuplint
+- eslint
+- stylelint
+- pretteir
+- commitlint
+- husky
+
 ## 環境
 
 Node.js v18.13.0
