@@ -1,5 +1,7 @@
 # Astro basic template
 
+![astro](astro.svg)
+
 ## 環境
 
 Node.js v18.13.0
