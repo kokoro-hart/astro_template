@@ -1,6 +1,6 @@
 # Astro basic template
 
-![astro-logo](astro.svg)
+![astro-logo](astro_logo.svg)
 
 - Astro@2.0.11
 - integrations
