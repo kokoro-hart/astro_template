@@ -6,6 +6,11 @@ type Props = { nav: Array<Nav> }
 const { nav } = Astro.props
 ---
 
+<script>
+  import { hamburgerMenu } from "@/js/hamburgerMenu"
+  hamburgerMenu()
+</script>
+
 <nav id="js-hamburger-menu" class={style.drawerNav} aria-label="global navigation" aria-hidden="true">
   <ul class={style.drawerNav__list}>
     {

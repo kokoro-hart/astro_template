@@ -2,5 +2,62 @@
 @use "@/styles/global" as *;
 
 .header {
-  background-color: $color_gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $header_height_sp;
+  background-color: $color_white;
+  z-index: map-get($layer, header);
+
+  @include md {
+    height: $header_height;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: map-get($layer, header_inner);
+
+    @include content_width(wide);
+  }
+
+  .header__logo {
+    // style
+  }
+
+  .header__logoLink {
+    display: block;
+
+    @include hover_opacity;
+  }
+
+  .header__logoImage {
+    display: block;
+    width: 62px;
+    height: 43px;
+
+    @include object_fit(contain);
+  }
+
+  .header__hamburger {
+    @include under_md {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: map-get($layer, hamburger);
+    }
+  }
+
+  .header__drawerNav {
+    @include under_md {
+      position: fixed;
+      inset: 0;
+      z-index: map-get($layer, drawer);
+      pointer-events: none;
+    }
+  }
 }

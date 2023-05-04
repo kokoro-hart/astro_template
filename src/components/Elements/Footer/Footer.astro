@@ -1,28 +1,41 @@
 ---
+import { getPaths } from "@/utils/getPaths"
+import GlovalNav from "./GlovalNav/GlovalNav.astro"
+import type { Nav } from "./types/"
+
 import style from "./Footer.module.scss"
+
+const { root, about, works, faq, contact } = getPaths()
+
+const nav: Array<Nav> = [
+  {
+    name: "TOP",
+    path: root,
+  },
+  {
+    name: "ABOUT",
+    path: about,
+  },
+  {
+    name: "WORKS",
+    path: works,
+  },
+  {
+    name: "FAQ",
+    path: faq,
+  },
+  {
+    name: "CONTACT",
+    path: contact,
+  },
+]
 ---
 
-<footer class="l-footer">
-  <div class="l-footer__inner">
-    <nav class="l-footer__nav" aria-label="footer navigation">
-      <ul class="l-footer__navList">
-        <li class="l-footer__navItem">
-          <a href="" class="l-footer__navLink"><span>リンク</span></a>
-        </li>
-        <li class="l-footer__navItem">
-          <a href="" class="l-footer__navLink"><span>リンク</span></a>
-        </li>
-        <li class="l-footer__navItem">
-          <a href="" class="l-footer__navLink"><span>リンク</span></a>
-        </li>
-        <li class="l-footer__navItem">
-          <a href="" class="l-footer__navLink"><span>リンク</span></a>
-        </li>
-        <li class="l-footer__navItem">
-          <a href="" class="l-footer__navLink"><span>リンク</span></a>
-        </li>
-      </ul>
-    </nav>
-    <small class="l-footer__copy">&copy; company name</small>
+<footer class={style.footer}>
+  <div class={style.footer__inner}>
+    <div class={style.footer__nav}>
+      <GlovalNav nav={nav} />
+    </div>
+    <small class={style.footer__copy}>&copy; company name</small>
   </div>
 </footer>

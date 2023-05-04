@@ -19,7 +19,7 @@
   },
   "lint-staged": {
     "*.astro": [
-      "markuplint --config .markuplintrc.cjs"
+      "markuplint --config .markuplintrc.js"
     ],
     "*.{js,ts}": [
       "prettier --write",

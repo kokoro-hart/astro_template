@@ -5,22 +5,6 @@ import style from "./index.module.scss"
 const meta = {
   title: "TOP",
 }
-
-const pages = [
-  { href: "/webfonts-performance/inline-script/", text: "webfonts-performance (inline-script)" },
-  { href: "/webfonts-performance/optimize/", text: "webfonts-performance (optimize)" },
-]
 ---
 
-<AppLayout {meta}>
-  <ul>
-    {
-      pages.map((it) => (
-        <li>
-          <a href={it.href}>{it.text}</a>
-        </li>
-      ))
-    }
-  </ul>
-  <div class={style.test}></div>
-</AppLayout>
+<AppLayout {meta} />

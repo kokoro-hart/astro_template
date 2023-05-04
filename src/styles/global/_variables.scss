@@ -31,3 +31,11 @@ $ease_in_out_quart: cubic-bezier(0.76, 0, 0.24, 1);
 // Headerの高さ
 $header_height: 90px;
 $header_height_sp: 70px;
+
+// z-index
+$layer: (
+  header: 100,
+  header_inner: 50,
+  hamburger: 50,
+  drawer: 25,
+);

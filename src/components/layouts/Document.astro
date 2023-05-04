@@ -122,6 +122,8 @@ const schema = JSON.stringify({
     <script type="application/ld+json" set:html={schema}></script>
   </head>
   <body>
-    <slot />
+    <div class="site-wrapper">
+      <slot />
+    </div>
   </body>
 </html>

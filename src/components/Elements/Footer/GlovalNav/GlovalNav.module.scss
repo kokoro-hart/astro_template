@@ -2,15 +2,10 @@
 @use "@/styles/global" as *;
 
 .globalNav {
-  @include under_md {
-    display: none;
-  }
   .globalNav__list {
-    @include md {
-      display: flex;
-      column-gap: 20px;
-      align-items: center;
-    }
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
   }
 
   .globalNav__item {
