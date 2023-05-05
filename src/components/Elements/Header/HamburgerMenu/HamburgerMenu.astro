@@ -1,7 +1,7 @@
 ---
 import type { Nav } from "../types/"
 
-import style from "./DrawerNav.module.scss"
+import style from "./HamburgerMenu.module.scss"
 
 type Props = { nav: Array<Nav> }
 const { nav } = Astro.props
@@ -12,12 +12,12 @@ const { nav } = Astro.props
   hamburgerMenu()
 </script>
 
-<nav id="js-hamburger-menu" class={style.drawerNav} aria-label="global navigation" aria-hidden="true">
-  <ul class={style.drawerNav__list}>
+<nav id="js-hamburger-menu" class={style.hamburgerMenu} aria-label="global navigation" aria-hidden="true">
+  <ul class={style.hamburgerMenu__list}>
     {
       nav.map(({ name, path }) => (
-        <li class={style.drawerNav__item}>
-          <a href={path} class={style.drawerNav__link}>
+        <li class={style.hamburgerMenu__item}>
+          <a href={path} class={style.hamburgerMenu__link}>
             {name}
           </a>
         </li>

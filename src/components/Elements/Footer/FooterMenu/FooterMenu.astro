@@ -1,0 +1,22 @@
+---
+import type { Nav } from "../types/"
+
+import style from "./FooterMenu.module.scss"
+
+type Props = { nav: Array<Nav> }
+const { nav } = Astro.props
+---
+
+<nav class={style.footerMenu} aria-label="global navigation">
+  <ul class={style.footerMenu__list}>
+    {
+      nav.map(({ name, path }) => (
+        <li class={style.footerMenu__item}>
+          <a href={path} class={style.footerMenu__link}>
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

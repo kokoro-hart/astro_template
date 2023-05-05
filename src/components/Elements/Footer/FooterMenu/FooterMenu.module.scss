@@ -1,19 +1,14 @@
 @charset "utf-8";
 @use "@/styles/global" as *;
 
-.globalNav {
-  @include under_md {
-    display: none;
-  }
-  .globalNav__list {
-    @include md {
-      display: flex;
-      column-gap: 20px;
-      align-items: center;
-    }
+.footerMenu {
+  .footerMenu__list {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
   }
 
-  .globalNav__item {
+  .footerMenu__item {
     @include line_height(20, 14);
     @include fz(14);
 
@@ -22,7 +17,7 @@
     }
   }
 
-  .globalNav__itemLink {
+  .footerMenu__itemLink {
     display: block;
     padding-top: 10px;
     padding-bottom: 10px;

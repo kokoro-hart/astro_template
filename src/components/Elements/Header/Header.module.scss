@@ -52,7 +52,7 @@
     }
   }
 
-  .header__drawerNav {
+  .header__hamburgerMenu {
     @include under_md {
       position: fixed;
       inset: 0;

@@ -1,10 +1,10 @@
 ---
 import { Image } from "@astrojs/image/components"
 
-import DrawerNav from "./DrawerNav/DrawerNav.astro"
-import GlovalNav from "./GlovalNav/GlovalNav.astro"
 import Hamburger from "./Hamburger/Hamburger.astro"
+import HamburgerMenu from "./HamburgerMenu/HamburgerMenu.astro"
 import style from "./Header.module.scss"
+import HeaderMenu from "./HeaderMenu/HeaderMenu.astro"
 import type { Nav } from "./types/"
 
 import { getPaths } from "@/utils/getPaths"
@@ -49,11 +49,11 @@ const nav: Array<Nav> = [
       </a>
     </div>
     <div class={style.header__globalNav}>
-      <GlovalNav nav={nav} />
+      <HeaderMenu nav={nav} />
     </div>
   </div>
-  <div class={style.header__drawerNav}>
-    <DrawerNav nav={nav} />
+  <div class={style.header__hamburgerMenu}>
+    <HamburgerMenu nav={nav} />
   </div>
   <div class={style.header__hamburger}>
     <Hamburger />

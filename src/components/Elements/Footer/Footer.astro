@@ -1,6 +1,6 @@
 ---
 import style from "./Footer.module.scss"
-import GlovalNav from "./GlovalNav/GlovalNav.astro"
+import FooterMenu from "./FooterMenu/FooterMenu.astro"
 import type { Nav } from "./types/"
 
 import { getPaths } from "@/utils/getPaths"
@@ -34,7 +34,7 @@ const nav: Array<Nav> = [
 <footer class={style.footer}>
   <div class={style.footer__inner}>
     <div class={style.footer__nav}>
-      <GlovalNav nav={nav} />
+      <FooterMenu nav={nav} />
     </div>
     <small class={style.footer__copy}>&copy; company name</small>
   </div>

@@ -13,6 +13,8 @@
     "lint:es": "eslint --cache 'src/**/*.{astro,js,ts,json}'",
     "lint:style": "stylelint --fix \"src/**/*.scss\"",
     "lint:html": "markuplint \"src/**/*.astro\"",
+    "format": "prettier ./src --write --ignore-path .gitignore",
+    "commitmsg": "commitlint --edit ${1}",
     "prepare": "husky install",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
     "validate": "npm run check-types && lint-staged --no-stash"
