@@ -17,7 +17,8 @@
     "commitmsg": "commitlint --edit ${1}",
     "prepare": "husky install",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
-    "validate": "npm run check-types && lint-staged --no-stash"
+    "validate": "npm run check-types && lint-staged --no-stash",
+    "new:ac": "hygen new ac"
   },
   "lint-staged": {
     "*.astro": [
@@ -55,6 +56,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "8.0.2",
+    "hygen": "^6.2.11",
     "lint-staged": "13.0.3",
     "markuplint": "^3.9.1",
     "postcss": "^8.4.20",
