@@ -46,3 +46,25 @@ You need to run "nvm install 16.19.0" to install it before using it.
 | 開発         | `npm run dev`             | ローカルサーバー`localhost:3000`で起動する     |
 | ビルド         | `npm run build`           | `./dist/`直下にビルドファイルを生成する            |
 | プレビュー         | `npm run preview`         | ローカルでビルド環境のプレビューを行う       |
+
+### Astro Component作成
+
+```
+npm run new:ac
+```
+
+上記のコマンドでコンポーネントファイルが作成されます。
+
+- Component.module.scss
+- Component.astro
+
+## husky
+
+pre-commitで各種リンターやフォーマッターを実行しています。  
+commitが中断された場合は、エラーを解消した上で再度commitお願いします。
+
+- markuplint
+- ESLint
+- Stylelint
+- commitlint
+- Prettier
