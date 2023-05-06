@@ -5,22 +5,22 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: map-get($layer, header);
   display: flex;
   align-items: center;
   width: 100%;
   height: $header_height_sp;
   background-color: $color_white;
-  z-index: map-get($layer, header);
 
   @include md {
     height: $header_height;
   }
 
   .header__inner {
+    z-index: map-get($layer, header_inner);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: map-get($layer, header_inner);
 
     @include content_width(wide);
   }

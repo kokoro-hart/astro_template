@@ -6,8 +6,17 @@ module.exports = {
     browser: true,
     es2022: true,
   },
-  extends: ['eslint:recommended', 'plugin:astro/recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  plugins: ['@typescript-eslint/eslint-plugin', 'import', 'unused-imports'],
+  extends: [
+    'eslint:recommended',
+    'plugin:astro/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ],
+  plugins: [
+    '@typescript-eslint/eslint-plugin',
+    'import',
+    'unused-imports'
+  ],
   rules: {
     'no-console': ['warn', { allow: ['warn', 'error'] }],
     '@typescript-eslint/ban-ts-comment': 'warn',
@@ -33,12 +42,7 @@ module.exports = {
     window: 'readonly',
   },
   overrides: [
-    // for mjs files
-    {
-      files: ['**/*.mjs'],
-      rules: {},
-    },
-    // for Astro files
+    // for .astro files
     {
       files: ['**/*.astro'],
       parser: 'astro-eslint-parser',
@@ -49,11 +53,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-explicit-any': 'warn',
       },
-    },
-    // for TypeScript files
-    {
-      files: ['**/*.ts'],
-      rules: {},
     },
   ],
   ignorePatterns: ['astro.config.mjs', '.eslintrc.cjs', '.stylelintrc.cjs', '.markuplintrc.js'],

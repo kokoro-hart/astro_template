@@ -1,13 +1,48 @@
 /** @type {import("stylelint").Config} */
 
 module.exports = {
-  extends: ['stylelint-config-html/astro'],
+  extends: [
+    'stylelint-config-html/astro',
+    "stylelint-config-recess-order",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
   plugins: ['stylelint-scss'],
   rules: {
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          'at-root',
+          'debug',
+          'each',
+          'else',
+          'error',
+          'extend',
+          'for',
+          'forward',
+          'function',
+          'if',
+          'include',
+          'mixin',
+          'return',
+          'use',
+          'warn',
+          'while',
+        ],
+      },
+    ],
+    'no-descending-specificity': null,
+    "scss/no-global-function-names": null,
+    'function-no-unknown': [
+      true,
+      {
+        ignoreFunctions: ['/^math/', '/^global/', '/^map-get/'],
+      },
+    ],
     'selector-class-pattern': null,
-    'scss/at-mixin-pattern': null,
-    'scss/dollar-variable-pattern': null,
-    'scss/double-slash-comment-whitespace-inside': null,
+    "no-invalid-position-at-import-rule": null
   },
   ignoreFiles: ['dist/**', 'node_modules/**'],
   overrides: [
