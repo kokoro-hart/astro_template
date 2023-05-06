@@ -21,7 +21,7 @@
 
 ## 環境
 
-Node.js v18.13.0
+Node.js v16.19.0
 
 バージョン管理にnvm(Node Version Manager)を利用している環境では、`nvm use`コマンドの実行で指定のバージョンに切り替わります。
 
@@ -29,13 +29,13 @@ Node.js v18.13.0
 nvm use
 ```
 
-下記メッセージが表示された場合は、`nvm install 18.13.0`でインストールしてください。
+下記メッセージが表示された場合は、`nvm install 16.19.0`でインストールしてください。
 
 ```
-Found '/パス省略/.nvmrc' with version <18.13.0>
-N/A: version "18.13.0 -> N/A" is not yet installed.
+Found '/パス省略/.nvmrc' with version <16.19.0>
+N/A: version "16.19.0 -> N/A" is not yet installed.
 
-You need to run "nvm install 18.13.0" to install it before using it.
+You need to run "nvm install 16.19.0" to install it before using it.
 ```
 
 ## コマンド
@@ -46,3 +46,25 @@ You need to run "nvm install 18.13.0" to install it before using it.
 | 開発         | `npm run dev`             | ローカルサーバー`localhost:3000`で起動する     |
 | ビルド         | `npm run build`           | `./dist/`直下にビルドファイルを生成する            |
 | プレビュー         | `npm run preview`         | ローカルでビルド環境のプレビューを行う       |
+
+### Astro Component作成
+
+```
+npm run new:ac
+```
+
+上記のコマンドでコンポーネントファイルが作成されます。
+
+- Component.module.scss
+- Component.astro
+
+## husky
+
+pre-commitで各種リンターやフォーマッターを実行しています。  
+commitが中断された場合は、エラーを解消した上で再度commitお願いします。
+
+- markuplint
+- ESLint
+- Stylelint
+- commitlint
+- Prettier
