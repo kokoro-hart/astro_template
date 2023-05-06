@@ -2,7 +2,7 @@
 import "@/styles/style.scss"
 import config from "@/data/meta.yml"
 
-export interface Meta {
+export type Meta = {
   title: string
   description: string
   "og:title": string
@@ -10,7 +10,7 @@ export interface Meta {
   "og:image": string
 }
 
-export interface Props {
+export type Props = {
   meta?: Partial<Meta>
 }
 
@@ -27,29 +27,22 @@ const formats = {
 const origin = import.meta.env.PUBLIC_ORIGIN || Astro.url.origin
 const url = `${origin}${Astro.url.pathname}`
 
+const createItemListElement = () => {
+  const paths: Array<string> = Object.values(config.paths)
+  const itemListElement = paths.map((path, index: number) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: index === 0 ? "top page" : `${path.split("/").join("")} page`,
+    item: index === 0 ? `${origin}` : `${origin}${path}`,
+  }))
+
+  return itemListElement
+}
+
 const schema = JSON.stringify({
   "@context": "https://schema.org/",
   "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://example.com/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Category",
-      item: "https://example.com/category/",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Current Page",
-      item: "https://example.com/category/page/",
-    },
-  ],
+  itemListElement: createItemListElement(),
 })
 ---
 
