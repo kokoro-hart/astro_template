@@ -4,9 +4,9 @@ siteName: "Astro basic template"
 meta:
   title: "Base title"
   description: "Base description"
-  "og:title": "Base title"
-  "og:description": "Base description"
-  "og:image": ""
+  "og:title": "Base og:title"
+  "og:description": "Base og:description"
+  "og:image": "Base og:image"
 
 paths:
   root: "/"
