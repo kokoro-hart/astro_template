@@ -13,11 +13,12 @@
   - autoprefixer
 - TypeScript
 - markuplint
-- eslint
-- stylelint
+- ESLint
+- Stylelint
 - pretteir
 - commitlint
 - husky
+- hygen
 
 ## 環境
 
@@ -47,7 +48,8 @@ You need to run "nvm install 16.19.0" to install it before using it.
 | ビルド         | `npm run build`           | `./dist/`直下にビルドファイルを生成する            |
 | プレビュー         | `npm run preview`         | ローカルでビルド環境のプレビューを行う       |
 
-### Astro Component作成
+
+## Astro Componentの作成
 
 ```
 npm run new:ac
@@ -55,8 +57,9 @@ npm run new:ac
 
 上記のコマンドでコンポーネントファイルが作成されます。
 
-- Component.module.scss
-- Component.astro
+- ComponentName.astro
+- ComponentName.module.scss
+
 
 ## husky
 
