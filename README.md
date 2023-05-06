@@ -32,7 +32,7 @@ nvm use
 下記メッセージが表示された場合は、`nvm install 16.19.0`でインストールしてください。
 
 ```
-Found '/パス省略/.nvmrc' with version <18.13.0>
+Found '/パス省略/.nvmrc' with version <16.19.0>
 N/A: version "16.19.0 -> N/A" is not yet installed.
 
 You need to run "nvm install 16.19.0" to install it before using it.
