@@ -17,7 +17,8 @@
     "commitmsg": "commitlint --edit ${1}",
     "prepare": "husky install",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
-    "validate": "npm run check-types && lint-staged --no-stash"
+    "validate": "npm run check-types && lint-staged --no-stash",
+    "new:ac": "hygen new ac"
   },
   "lint-staged": {
     "*.astro": [
