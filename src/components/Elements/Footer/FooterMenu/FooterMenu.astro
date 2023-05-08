@@ -4,10 +4,10 @@ import type { Nav } from "../types/"
 import style from "./FooterMenu.module.scss"
 
 type Props = { nav: Array<Nav> }
-const { nav } = Astro.props
+const { nav, ...props } = Astro.props
 ---
 
-<nav class={style.footerMenu} aria-label="global navigation">
+<nav class={style.footerMenu} aria-label="global navigation" {...props}>
   <ul class={style.footerMenu__list}>
     {
       nav.map(({ name, path }) => (

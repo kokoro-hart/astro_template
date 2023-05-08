@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components"
 
-import Hamburger from "./Hamburger/Hamburger.astro"
+import ButtonHamburger from "./ButtonHamburger/ButtonHamburger.astro"
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu.astro"
 import style from "./Header.module.scss"
 import HeaderMenu from "./HeaderMenu/HeaderMenu.astro"
@@ -9,7 +9,7 @@ import type { Nav } from "./types/"
 
 import { getPaths } from "@/utils/getPaths"
 
-const { root, about, works, faq, contact } = getPaths()
+const { root, page_base_column1, page_base_column2, page_base_contact } = getPaths()
 
 const nav: Array<Nav> = [
   {
@@ -17,20 +17,16 @@ const nav: Array<Nav> = [
     path: root,
   },
   {
-    name: "ABOUT",
-    path: about,
+    name: "ベース1カラムページ",
+    path: page_base_column1,
   },
   {
-    name: "WORKS",
-    path: works,
+    name: "ベース2カラムページ",
+    path: page_base_column2,
   },
   {
-    name: "FAQ",
-    path: faq,
-  },
-  {
-    name: "CONTACT",
-    path: contact,
+    name: "ベースお問い合わせページ",
+    path: page_base_contact,
   },
 ]
 ---
@@ -56,6 +52,6 @@ const nav: Array<Nav> = [
     <HamburgerMenu nav={nav} />
   </div>
   <div class={style.header__hamburger}>
-    <Hamburger />
+    <ButtonHamburger />
   </div>
 </header>

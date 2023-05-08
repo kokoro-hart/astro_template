@@ -1,13 +1,18 @@
 ---
+import type { HTMLAttributes } from "astro/types"
+
 import type { Nav } from "../types/"
 
 import style from "./HeaderMenu.module.scss"
 
-type Props = { nav: Array<Nav> }
-const { nav } = Astro.props
+export type Props = HTMLAttributes<"nav"> & {
+  nav: Array<Nav>
+}
+
+const { nav, ...props } = Astro.props
 ---
 
-<nav class={style.headerMenu} aria-label="global navigation">
+<nav class={style.headerMenu} aria-label="global navigation" {...props}>
   <ul class={style.headerMenu__list}>
     {
       nav.map(({ name, path }) => (

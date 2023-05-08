@@ -10,7 +10,6 @@ meta:
 
 paths:
   root: "/"
-  about: "/about/"
-  works: "/works/"
-  faq: "/faq/"
-  contact: "/contact/"
+  page_base_column1: "/page_base_column1/"
+  page_base_column2: "/page_base_column2/"
+  page_base_contact: "/page_base_contact/"

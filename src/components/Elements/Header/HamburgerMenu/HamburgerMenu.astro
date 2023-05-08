@@ -4,7 +4,7 @@ import type { Nav } from "../types/"
 import style from "./HamburgerMenu.module.scss"
 
 type Props = { nav: Array<Nav> }
-const { nav } = Astro.props
+const { nav, ...props } = Astro.props
 ---
 
 <script>
@@ -12,7 +12,7 @@ const { nav } = Astro.props
   hamburgerMenu()
 </script>
 
-<nav id="js-hamburger-menu" class={style.hamburgerMenu} aria-label="global navigation" aria-hidden="true">
+<nav id="js-hamburger-menu" class={style.hamburgerMenu} aria-label="global navigation" aria-hidden="true" {...props}>
   <ul class={style.hamburgerMenu__list}>
     {
       nav.map(({ name, path }) => (
