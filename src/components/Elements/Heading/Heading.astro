@@ -1,0 +1,18 @@
+---
+import style from "./Heading.module.scss"
+
+import type { HTMLTagString } from "@/types/astro"
+
+export interface Props {
+  tag?: HTMLTagString
+  titleEn?: string
+  titleJa?: string
+}
+
+const { tag: Tag = "h2", titleEn, titleJa } = Astro.props
+---
+
+<Tag class={style.heading}>
+  <span class={style.heading__ja}>{titleJa}</span>
+  <span class={style.heading__en}>{titleEn}</span>
+</Tag>

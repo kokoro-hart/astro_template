@@ -1,0 +1,47 @@
+---
+import { Picture } from "@astrojs/image/components"
+import type { PictureComponentLocalImageProps } from "@astrojs/image/components"
+
+import style from "./MainVisual.module.scss"
+
+import type { ImageMetadata } from "@/types/client"
+
+export type MainVisualProps = {
+  heading: string
+  img: Partial<PictureComponentLocalImageProps> & {
+    src: ImageMetadata
+  }
+}
+
+export type Props = MainVisualProps
+
+const {
+  heading,
+  img: {
+    src: { src: localImage, width, height },
+    widths = [768, 1024, 1280, 1536],
+    sizes = "(min-width: 768px) 100vw, 100vw",
+    formats = ["avif", "webp"],
+    alt = "",
+  },
+  ...props
+} = Astro.props
+---
+
+<div class={style.mainVisual} {...props}>
+  <div class={style.mainVisual__inner}>
+    <h1 class={style.mainVisual__heading}>{heading}</h1>
+  </div>
+  <div class={style.mainVisual__background}>
+    <Picture
+      src={localImage}
+      widths={widths}
+      sizes={sizes}
+      formats={formats}
+      alt={alt}
+      aspectRatio={`${width}:${height}`}
+      decoding={null}
+      loading={null}
+    />
+  </div>
+</div>

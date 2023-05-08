@@ -4,8 +4,12 @@
 .footerMenu {
   .footerMenu__list {
     display: flex;
-    column-gap: 20px;
+    gap: 20px;
     align-items: center;
+
+    @include under_md {
+      flex-direction: column;
+    }
   }
 
   .footerMenu__item {

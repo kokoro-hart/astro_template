@@ -181,6 +181,14 @@ q::before {
   min-height: 100vh;
 }
 
+.siteContent {
+  margin-top: global.$header_height_sp;
+
+  @include global.md {
+    margin-top: global.$header_height;
+  }
+}
+
 main {
   flex: 1;
   overflow: hidden;

@@ -1,0 +1,12 @@
+@charset "utf-8";
+@use "@/styles/global" as *;
+
+.heading {
+  @include fz(24);
+  @include line_height(32, 24);
+
+  @include md {
+    @include fz(40);
+    @include line_height(56, 40);
+  }
+}
