@@ -2,11 +2,11 @@
 
 # FLAT Astroテンプレート
 
-- Astro@2.0.11
+- [Astro@2.0.11](https://astro.build/ "Astro@2.0.11")
 - integrations
-  - @astrojs/image
-  - @astrojs/sitemap
-  - astro-compress
+  - [@astrojs/image](https://github.com/withastro/astro/tree/main/packages/integrations/image/ "@astrojs/image")
+  - [@astrojs/sitemap](https://github.com/withastro/astro/tree/main/packages/integrations/sitemap/ "@astrojs/sitemap")
+  - [astro-compress](https://github.com/astro-community/astro-compress "astro-compress")
 - CSS (Sass + PostCSS Plugins)
   - cssModules
   - glob @use
