@@ -1,6 +1,6 @@
 ![astro-logo](astro_logo.svg)
 
-# FLATAstroテンプレート
+# FLAT Astroテンプレート
 
 - Astro@2.0.11
 - integrations
