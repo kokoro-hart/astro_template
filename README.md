@@ -20,20 +20,19 @@
 - husky
 - hygen
 
-## 環境
-
+## Environment
 Node.js v16.19.0
 
-バージョン管理にnvm(Node Version Manager)を利用している環境では、`nvm use`コマンドの実行で指定のバージョンに切り替わります。
+If you are using nvm (Node Version Manager) for version management, run the nvm use command to switch to the specified version.
 
 ```
 nvm use
 ```
 
-下記メッセージが表示された場合は、`nvm install 16.19.0`でインストールしてください。
+If you see the following message, please install it by running nvm install 16.19.0:
 
 ```
-Found '/パス省略/.nvmrc' with version <16.19.0>
+Found '/〜/.nvmrc' with version <16.19.0>
 N/A: version "16.19.0 -> N/A" is not yet installed.
 
 You need to run "nvm install 16.19.0" to install it before using it.
@@ -43,19 +42,19 @@ You need to run "nvm install 16.19.0" to install it before using it.
 
 | to do            | Command              | Action                                             |
 | :--------------------- | :--------------------- | :------------------------------------------------- |
-| インストール         | `npm ci`         | package-lock.json から依存関係をインストールする                             |
-| 開発         | `npm run dev`             | ローカルサーバー`localhost:3000`で起動する     |
-| ビルド         | `npm run build`           | `./dist/`直下にビルドファイルを生成する            |
-| プレビュー         | `npm run preview`         | ローカルでビルド環境のプレビューを行う       |
+| Install         | `npm ci`         | Install dependencies from package-lock.json                             |
+| Development         | `npm run dev`             | Start a local server at localhost:3000     |
+| Build         | `npm run build`           | Generate build files in `./dist/`            |
+| Preview         | `npm run preview`         | Preview the build environment locally       |
 
 
-## Astro Componentの作成
+## Creating an Astro Component
 
 ```
 npm run new:ac
 ```
 
-上記のコマンドでコンポーネントファイルが作成されます。
+The above command will create component files.
 
 - ComponentName.astro
 - ComponentName.module.scss
@@ -63,8 +62,8 @@ npm run new:ac
 
 ## husky
 
-pre-commitで各種リンターやフォーマッターを実行しています。  
-commitが中断された場合は、エラーを解消した上で再度commitお願いします。
+Various linters and formatters are executed on pre-commit.
+If the commit is interrupted, please resolve the errors and commit again.
 
 - markuplint
 - ESLint
