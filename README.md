@@ -1,7 +1,9 @@
 ![astro-logo](astro_logo.svg)
 
 # Astro basic template
+Templates for developing websites and web applications in Astro.
 
+## Stacks
 - [Astro@2.0.11](https://astro.build/ "Astro@2.0.11")
 - integrations
   - [@astrojs/image](https://github.com/withastro/astro/tree/main/packages/integrations/image/ "@astrojs/image")
