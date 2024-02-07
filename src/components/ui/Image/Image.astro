@@ -1,0 +1,10 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import type { SomeRequired } from "@/utils";
+
+type Props = SomeRequired<HTMLAttributes<"img">, "src" | "width" | "height">;
+
+const { alt = "", loading = "lazy", decoding = "async", ...props } = Astro.props;
+---
+
+<img alt={alt} loading={loading} decoding={decoding} {...props} />

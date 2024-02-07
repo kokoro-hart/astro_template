@@ -1,0 +1,49 @@
+@charset "utf-8";
+@use "@/assets/styles/global" as *;
+
+.drawerlist__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.drawerlist__item {
+  opacity: 0;
+  transition: transform 0.6s $ease_out_quint, opacity 0.6s $ease_out_quint;
+  transform: translateX(30%);
+  @for $i from 1 through 10 {
+    &:nth-of-type(#{$i}) {
+      transition-delay: $i * 0.05s;
+    }
+  }
+
+  &:global(.is-active) {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.drawerlist__link {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  @include fz(20);
+  @include lh(24, 20);
+  @include font_secondary;
+
+  &[data-current="true"] {
+    position: relative;
+    color: $color_primary_tokyo;
+
+    &::after {
+      position: absolute;
+      bottom: 7px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      content: "";
+      background-color: $color_primary_tokyo;
+    }
+  }
+}

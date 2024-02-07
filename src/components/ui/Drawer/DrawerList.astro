@@ -1,0 +1,55 @@
+---
+import Drawer from "./Drawer.astro";
+import styles from "./DrawerList.module.scss";
+
+import { getPath, testPath } from "@/utils";
+import { Link } from "../Link";
+
+const currentPath = Astro.url.pathname;
+const isTopPage = testPath.isTop(currentPath);
+
+const defaultList = [
+  {
+    name: "Top",
+    path: `${isTopPage ? "#top" : getPath.home}`,
+    isCurrent: testPath.isTop(currentPath),
+  },
+  {
+    name: "Spot",
+    path: `${isTopPage ? "#spot" : "/#spot"}`,
+    isCurrent: false,
+  },
+  {
+    name: "Route",
+    path: `${isTopPage ? "#route" : "/#route"}`,
+    isCurrent: false,
+  },
+  {
+    name: "Video",
+    path: `${isTopPage ? "#video" : "/#video"}`,
+    isCurrent: false,
+  },
+];
+
+type Props = {
+  list?: typeof defaultList;
+};
+
+const { list = defaultList } = Astro.props;
+---
+
+<Drawer>
+  <nav class={styles.drawerlist} aria-label="Site Menu">
+    <ul class={styles.drawerlist__list}>
+      {
+        list.map(({ name, path, isCurrent }) => (
+          <li class:list={[styles.drawerlist__item, "js-drawer-item", "u-uppercase"]}>
+            <Link href={path} class:list={[styles.drawerlist__link, "js-drawer-link"]} data-current={`${isCurrent}`}>
+              {name}
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</Drawer>

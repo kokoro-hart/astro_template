@@ -2,7 +2,7 @@
 import "ress";
 import "@/assets/styles/style.scss";
 
-import { globalMeta, siteName } from "@/consts";
+import { GLOBAL_META, SITE_NAME } from "@/consts";
 
 type Meta = {
   title: string;
@@ -19,12 +19,12 @@ const origin = Astro.url.origin;
 const url = `${origin}${Astro.url.pathname}`;
 
 const meta: Partial<Meta> = {
-  ...globalMeta,
+  ...GLOBAL_META,
   ...props.meta,
 };
 
 const formats = {
-  title: [meta.title, siteName].filter(Boolean).join(" - "),
+  title: [meta.title, SITE_NAME].filter(Boolean).join(" - "),
 };
 ---
 

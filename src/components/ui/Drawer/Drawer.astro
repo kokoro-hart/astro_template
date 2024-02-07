@@ -1,0 +1,43 @@
+---
+import styles from "./Drawer.module.scss";
+---
+
+<div class={styles.drawer}>
+  <button
+    type="button"
+    id="js-drawer-open"
+    class={styles.drawer__button}
+    aria-label="Show menu"
+    aria-controls="js-drawer-menu"
+    aria-expanded="false"
+  >
+    <span class={styles.drawer__buttonLine}></span>
+  </button>
+
+  <div class={styles.drawer__content} id="js-drawer-menu">
+    <button
+      type="button"
+      id="js-drawer-close"
+      class={styles.drawer__buttonClose}
+      aria-label="Hide the menu"
+      aria-controls="js-drawer-menu"
+    >
+    </button>
+    <slot />
+  </div>
+</div>
+
+<script>
+  import { Drawer } from "./script";
+  const drawerInit = () => {
+    const triggerButton = document.querySelector<HTMLElement>("#js-drawer-open");
+    const closeButton = document.querySelector<HTMLElement>("#js-drawer-close");
+    const targetMenu = document.querySelector<HTMLElement>("#js-drawer-menu");
+    const targetMenuItems = document.querySelectorAll<HTMLElement>(".js-drawer-item");
+    if (!triggerButton || !targetMenu || !closeButton || !targetMenuItems) return;
+
+    const instance = new Drawer({ triggerButton, closeButton, targetMenu, targetMenuItems });
+    instance.init();
+  };
+  drawerInit();
+</script>

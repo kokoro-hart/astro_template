@@ -1,0 +1,14 @@
+---
+import styles from "./Heading.module.scss";
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+export type Props = Polymorphic<{ as: HTMLTag }> & {
+  size?: "xs" | "sm" | "md" | "lg";
+};
+
+const { as: As = "h2", size = "md" } = Astro.props;
+---
+
+<As class={styles.heading} data-size={size}>
+  <slot />
+</As>
