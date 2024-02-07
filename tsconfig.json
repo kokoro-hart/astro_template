@@ -16,7 +16,8 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "importsNotUsedAsValues": "error",
   },
   "extends": "astro/tsconfigs/strict",
   "include": ["**/*.ts", "**/*.astro"],

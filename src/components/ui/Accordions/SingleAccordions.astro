@@ -1,0 +1,48 @@
+---
+import styles from "./Accordions.module.scss";
+
+type Item = {
+  trigger: string;
+  panel: string;
+};
+
+type Props = {
+  items: Item[];
+};
+
+const { items } = Astro.props;
+---
+
+<div class="accordions js-single-accordions">
+  {
+    items.map(({ trigger, panel }, index) => (
+      <dl class="js-accordion" data-default-open={`${index === 0}`}>
+        <button
+          type="button"
+          class:list={[styles.trigger, "js-accordion-trigger"]}
+          aria-expanded={`${index === 0}`}
+        >
+          {trigger}
+        </button>
+        <dd
+          class:list={[styles.panel, "js-accordion-panel"]}
+          aria-hidden={`${index !== 0}`}
+        >
+          <div class={styles.panelInner}>{panel}</div>
+        </dd>
+      </dl>
+    ))
+  }
+</div>
+
+<script>
+  import { SingleAccordions } from "./script";
+
+  const wrappers = document.querySelectorAll<HTMLDivElement>(
+    ".js-single-accordions"
+  );
+  for (const wrapper of wrappers) {
+    const accordions = new SingleAccordions(wrapper);
+    accordions.init();
+  }
+</script>

@@ -1,0 +1,28 @@
+@charset "utf-8";
+@use "@/assets/styles/global" as *;
+
+.linkSkip {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  @include visually_hidden;
+
+  &:focus {
+    top: 5px;
+    left: 5px;
+    z-index: calc(var(--zindex-header) + 1);
+    display: block;
+    width: 15em;
+    height: auto;
+    padding: 5px;
+    clip: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: $color_white;
+    border: $color_primary solid 1px;
+    border-radius: 2px;
+
+    @include fz(18);
+  }
+}

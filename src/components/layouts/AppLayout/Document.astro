@@ -1,0 +1,68 @@
+---
+import "ress";
+import "@/assets/styles/style.scss";
+
+import { globalMeta, siteName } from "@/consts";
+
+type Meta = {
+  title: string;
+  description: string;
+  ogImage: string;
+};
+
+type Props = {
+  meta?: Partial<Meta>;
+};
+
+const props = Astro.props;
+const origin = Astro.url.origin;
+const url = `${origin}${Astro.url.pathname}`;
+
+const meta: Partial<Meta> = {
+  ...globalMeta,
+  ...props.meta,
+};
+
+const formats = {
+  title: [meta.title, siteName].filter(Boolean).join(" - "),
+};
+---
+
+<!doctype html>
+<html lang={"ja"}>
+  <head>
+    <meta charset={new TextDecoder().encoding} />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{formats.title}</title>
+    <link rel="dns-prefetch" href="https://use.typekit.net" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+
+    {/* common */}
+    <meta name="og:url" property="og:url" content={url} />
+    <meta name="og:title" property="og:title" content={formats.title} />
+    <meta name="og:description" property="og:description" content={meta.description} />
+    <meta property="og:type" content="website" />
+    <meta name="og:site_name" property="og:site_name" content={formats.title} />
+    {meta.ogImage && <meta name="og:image" property="og:image" content={origin + meta.ogImage} />}
+    <link rel="canonical" href={url} />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@dummy" />
+    <meta name="twitter:description" content={meta.description} />
+
+    {/* favicon  */}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script>
+      import "@/assets/scripts/app";
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

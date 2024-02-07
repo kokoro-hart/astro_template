@@ -1,0 +1,24 @@
+@charset "utf-8";
+@use "@/assets/styles/global" as *;
+
+.trigger {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: $color_white;
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 10px 15px;
+  transition: grid-template-rows 0.2s ease-out;
+
+  &[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+  }
+}
+
+.panelInner {
+  overflow: hidden;
+}

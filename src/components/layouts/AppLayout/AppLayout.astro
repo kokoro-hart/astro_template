@@ -1,0 +1,17 @@
+---
+import styles from "./AppLayout.module.scss";
+
+import { Document } from "@/components/layouts";
+import type { ComponentProps } from "@/utils";
+
+type Props = ComponentProps<typeof Document>;
+
+const props = Astro.props;
+---
+
+<Document {...props}>
+  <a href="#start-of-content" class={styles.linkSkip}>メインコンテンツにスキップ</a>
+  <main id="start-of-content" class="main">
+    <slot />
+  </main>
+</Document>
