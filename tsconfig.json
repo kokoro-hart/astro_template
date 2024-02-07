@@ -1,6 +1,6 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -8,15 +8,7 @@
     "outDir": "./dist",
     "allowJs": true,
     "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "importsNotUsedAsValues": "error",
-    "downlevelIteration": true
+    "moduleResolution": "node"
   },
   "include": ["**/*.ts", "**/*.astro"],
   "exclude": ["node_modules"]

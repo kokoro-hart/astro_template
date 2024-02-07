@@ -7,9 +7,10 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint ./src --ext .ts,.astro --max-warnings=0 --cache --ignore-path .gitignore",
-    "format": "prettier --write .",
-    "check-types": "tsc --project tsconfig.json --pretty --noEmit"
+    "lint:es": "eslint ./src --ext .ts,.astro --max-warnings=0 --cache --ignore-path .gitignore",
+    "lint:astro": "astro check",
+    "lint:types": "tsc --noEmit",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
