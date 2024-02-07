@@ -3,7 +3,7 @@ type ReturnVoidFunction = () => void;
 export const debounce = (
   interval: number,
   intervalFunction: ReturnVoidFunction,
-  noIntervalFunction: string | ReturnVoidFunction
+  noIntervalFunction: string | ReturnVoidFunction,
 ) => {
   let timer: number;
   return () => {

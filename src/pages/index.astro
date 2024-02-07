@@ -1,9 +1,27 @@
 ---
 import { AppLayout } from "@/components/layouts";
+import { Accordions, SingleAccordions } from "@/components/ui";
 
 const meta = {
   title: "Top",
 };
 ---
 
-<AppLayout meta={meta}> TOP </AppLayout>
+<AppLayout meta={meta}>
+  <Accordions
+    items={[
+      { trigger: "Multi Mode Trigger", panel: "Multi Mode Panel" },
+      {
+        trigger: "Multi Mode Trigger",
+        panel: "Multi Mode Panel",
+        defaultOpen: true,
+      },
+    ]}
+  />
+  <SingleAccordions
+    items={[
+      { trigger: "Single Mode Trigger", panel: "Single Mode Panel" },
+      { trigger: "Single Mode Trigger", panel: "Single Mode Panel" },
+    ]}
+  />
+</AppLayout>

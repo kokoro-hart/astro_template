@@ -23,13 +23,9 @@
   }
 
   @if $width == wide {
-    max-width: calc(
-      #{variables.$content_width} + #{variables.$content_paddingL} * 2
-    );
+    max-width: calc(#{variables.$content_width} + #{variables.$content_paddingL} * 2);
   } @else if $width == narrow {
-    max-width: calc(
-      #{variables.$content_width_narrow} + #{variables.$content_paddingL} * 2
-    );
+    max-width: calc(#{variables.$content_width_narrow} + #{variables.$content_paddingL} * 2);
   }
 }
 
@@ -113,8 +109,7 @@
 
 // iOS Safari
 @mixin only_iOS {
-  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true))
-    and (not (-moz-appearance: none)) {
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and (not (-moz-appearance: none)) {
     @content;
   }
 }

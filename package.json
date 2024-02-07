@@ -1,6 +1,5 @@
 {
   "name": "astro-template",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -8,15 +7,24 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "lint": "eslint ./src --ext .ts,.astro --max-warnings=0 --cache --ignore-path .gitignore",
+    "format": "prettier --write .",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
     "@astrojs/tailwind": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
     "astro": "^4.3.3",
     "ress": "^5.0.2"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.4",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-tailwindcss": "^3.14.2",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.70.0",

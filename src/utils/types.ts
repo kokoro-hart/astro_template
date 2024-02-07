@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * ComponentProps
  * @desc Get astro component props

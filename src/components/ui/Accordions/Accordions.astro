@@ -17,18 +17,11 @@ const { items } = Astro.props;
 <div class="js-accordions">
   {
     items.map(({ trigger, panel, defaultOpen = false }) => (
-      <dl class="js-accordion" data-default-open={`${defaultOpen}`}>
-        <button
-          type="button"
-          class:list={[styles.trigger, "js-accordion-trigger"]}
-          aria-expanded={`${defaultOpen}`}
-        >
+      <dl class="js-accordion" data-default-open={defaultOpen}>
+        <button type="button" class:list={[styles.trigger, "js-accordion-trigger"]} aria-expanded={defaultOpen}>
           {trigger}
         </button>
-        <dd
-          class:list={[styles.panel, "js-accordion-panel"]}
-          aria-hidden={`${!defaultOpen}`}
-        >
+        <dd class:list={[styles.panel, "js-accordion-panel"]} aria-hidden={defaultOpen}>
           <div class={styles.panelInner}>{panel}</div>
         </dd>
       </dl>

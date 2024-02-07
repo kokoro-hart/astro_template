@@ -8,16 +8,10 @@ export class Accordions {
   openIndexes: number[];
   constructor(wrapper: HTMLElement) {
     this.items = [...wrapper.querySelectorAll<HTMLElement>(".js-accordion")];
-    this.triggers = this.items.map((item) =>
-      item.querySelector<HTMLButtonElement>(".js-accordion-trigger")
-    );
-    this.panels = this.items.map((item) =>
-      item.querySelector<HTMLElement>(".js-accordion-panel")
-    );
+    this.triggers = this.items.map((item) => item.querySelector<HTMLButtonElement>(".js-accordion-trigger"));
+    this.panels = this.items.map((item) => item.querySelector<HTMLElement>(".js-accordion-panel"));
     this.openIndexes =
-      this.items
-        .map((item, i) => (item.dataset.defaultOpen === "true" ? i : -1))
-        .filter((item) => item !== -1) ?? [];
+      this.items.map((item, i) => (item.dataset.defaultOpen === "true" ? i : -1)).filter((item) => item !== -1) ?? [];
   }
 
   openItem(index: number) {
@@ -40,9 +34,7 @@ export class Accordions {
 
   handleTriggerClick(index: number) {
     const isOpen = this.openIndexes.includes(index);
-    const newIndexes = isOpen
-      ? this.openIndexes.filter((i) => i !== index)
-      : [...this.openIndexes, index];
+    const newIndexes = isOpen ? this.openIndexes.filter((i) => i !== index) : [...this.openIndexes, index];
     this.openIndexes = newIndexes;
     this.toggleItem(isOpen, index);
   }
