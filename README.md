@@ -40,7 +40,7 @@ N/A: version "16.19.0 -> N/A" is not yet installed.
 You need to run "nvm install 16.19.0" to install it before using it.
 ```
 
-## コマンド
+## Commands
 
 | to do            | Command              | Action                                             |
 | :--------------------- | :--------------------- | :------------------------------------------------- |
