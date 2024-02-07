@@ -1,5 +1,3 @@
-![astro-logo](astro_logo.svg)
-
 # Astro basic template
 Templates for developing websites and web applications in Astro.
 
