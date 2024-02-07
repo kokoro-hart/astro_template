@@ -1,72 +1,54 @@
-# Astro basic template
-Templates for developing websites and web applications in Astro.
+# Astro Starter Kit: Basics
 
-## Stacks
-- [Astro@2.0.11](https://astro.build/ "Astro@2.0.11")
-- integrations
-  - [@astrojs/image](https://github.com/withastro/astro/tree/main/packages/integrations/image/ "@astrojs/image")
-  - [@astrojs/sitemap](https://github.com/withastro/astro/tree/main/packages/integrations/sitemap/ "@astrojs/sitemap")
-  - [astro-compress](https://github.com/astro-community/astro-compress "astro-compress")
-- CSS (Sass + PostCSS Plugins)
-  - cssModules
-  - glob @use
-  - autoprefixer
-- TypeScript
-- markuplint
-- ESLint
-- Stylelint
-- pretteir
-- commitlint
-- husky
-- hygen
-
-## Environment
-Node.js v16.19.0
-
-If you are using nvm (Node Version Manager) for version management, run the nvm use command to switch to the specified version.
-
-```
-nvm use
+```sh
+npm create astro@latest -- --template basics
 ```
 
-If you see the following message, please install it by running nvm install 16.19.0:
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
-Found '/〜/.nvmrc' with version <16.19.0>
-N/A: version "16.19.0 -> N/A" is not yet installed.
 
-You need to run "nvm install 16.19.0" to install it before using it.
-```
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Commands
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-| to do            | Command              | Action                                             |
-| :--------------------- | :--------------------- | :------------------------------------------------- |
-| Install         | `npm ci`         | Install dependencies from package-lock.json                             |
-| Development         | `npm run dev`             | Start a local server at localhost:3000     |
-| Build         | `npm run build`           | Generate build files in `./dist/`            |
-| Preview         | `npm run preview`         | Preview the build environment locally       |
+Any static assets, like images, can be placed in the `public/` directory.
 
+## 🧞 Commands
 
-## Creating an Astro Component
+All commands are run from the root of the project, from a terminal:
 
-```
-npm run new:ac
-```
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-The above command will create component files.
+## 👀 Want to learn more?
 
-- ComponentName.astro
-- ComponentName.module.scss
-
-
-## husky
-
-Various linters and formatters are executed on pre-commit.
-If the commit is interrupted, please resolve the errors and commit again.
-
-- markuplint
-- ESLint
-- Stylelint
-- commitlint
-- Prettier
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
