@@ -9,7 +9,9 @@
 
 .drawerlist__item {
   opacity: 0;
-  transition: transform 0.6s $ease_out_quint, opacity 0.6s $ease_out_quint;
+  transition:
+    transform 0.6s $ease_out_quint,
+    opacity 0.6s $ease_out_quint;
   transform: translateX(30%);
   @for $i from 1 through 10 {
     &:nth-of-type(#{$i}) {
